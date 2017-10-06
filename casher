@@ -1,0 +1,17 @@
+class Items(object):
+  """A class that stores various items."""
+  def __init__(self, name, id, price):
+    self.name = name
+    self.color = id
+    self.flavor = price
+  
+  item=[]
+  def add_item(n):
+  n=items("",0,0)
+  n.name=raw_input("enter item name")
+  n.id=int(raw_input("enter item id"))
+  n.price=int(raw_input("enter item price"))
+  item.append(n)
+  
+  def delete_item(id)
+  
