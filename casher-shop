@@ -1,0 +1,54 @@
+class Item(object):
+
+  def __init__(self, name, id, price):
+    self.name = name
+    self.id = id
+    self.price = price
+
+item_dic={}
+name_dic={}
+def add_item():
+  n = Item('name',0,0)
+  n.name=str(input("输入品名"))
+  n.id=int(input("输入id"))
+  n.price=float(input("输入价格"))
+  item_dic[n.id]=n.price
+  name_dic[n.id]=n.name
+def del_item():
+    id_del=input("输入id")
+    del item_dic[id_del]
+
+def casher():
+    num=int(input("输入购买商品种类数"))
+    i=1
+    s=0
+    fo = open("list.txt", "w")
+    fo.write("===========商品清单为：===================\n编号     品名    单价    数量   \n")
+    while i<=num:
+       a=int(input("输入id"))
+       b=int(input("输入数量"))
+       s=s+b*item_dic[a]
+
+       fo.write(str(a))
+       fo.write("     ")
+       fo.write(str(name_dic[a]))
+       fo.write("     ")
+       fo.write(str(item_dic[a] )   )
+       fo.write("     ")
+       fo.write(str(b))
+       fo.write("     \n")
+       i+=1
+    fo.write("总价：")
+    fo.write(  str(s) )
+    fo.write ("元\n")
+    fo.write("============shopping list=====================")
+    print(s)
+    fo.close()
+
+
+
+
+#add_item()
+#add_item()
+#casher()
+
